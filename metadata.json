@@ -1,0 +1,6 @@
+{
+  "name": "Kestrel AI",
+  "description": "Free multi-modal AI workspace for conversational chat, live code artifacts, image generation, and document analysis with multi-tier fallbacks.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

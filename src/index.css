@@ -1,0 +1,191 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-display: 'Outfit', system-ui, -apple-system, sans-serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
+    --surface-bg: #FAFAF9;
+    --surface-elevated: #FFFFFF;
+    --hairline-border: rgba(24, 24, 27, 0.09);
+  }
+
+  .dark {
+    --surface-bg: #09090B;
+    --surface-elevated: #111114;
+    --hairline-border: rgba(255, 255, 255, 0.08);
+  }
+
+  html,
+  body {
+    font-family: var(--font-sans);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .dark body {
+    letter-spacing: 0.003em;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+  }
+
+  code, pre, kbd, samp, .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Crisp obsidian/alabaster scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(161, 161, 170, 0.24);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(161, 161, 170, 0.44);
+}
+
+/* Markdown prose styles */
+.ai-prose {
+  font-size: 15px;
+  line-height: 1.72;
+  color: inherit;
+}
+
+.ai-prose > *:first-child {
+  margin-top: 0;
+}
+
+.ai-prose > *:last-child {
+  margin-bottom: 0;
+}
+
+.ai-prose p {
+  margin: 0.78em 0;
+}
+
+.ai-prose h1, .ai-prose h2, .ai-prose h3, .ai-prose h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  margin-top: 1.4em;
+  margin-bottom: 0.5em;
+  line-height: 1.28;
+  letter-spacing: -0.02em;
+}
+
+.ai-prose h1 { font-size: 1.375rem; }
+.ai-prose h2 { font-size: 1.1875rem; }
+.ai-prose h3 { font-size: 1.05rem; }
+
+.ai-prose ul, .ai-prose ol {
+  margin: 0.68em 0;
+  padding-left: 1.4em;
+}
+
+.ai-prose ul { list-style-type: disc; }
+.ai-prose ol { list-style-type: decimal; }
+
+.ai-prose li {
+  margin: 0.38em 0;
+}
+
+.ai-prose blockquote {
+  margin: 1em 0;
+  padding: 0.65rem 1rem;
+  border-left: 2.5px solid #0D9488;
+  border-top: 1px solid var(--hairline-border);
+  border-right: 1px solid var(--hairline-border);
+  border-bottom: 1px solid var(--hairline-border);
+  border-radius: 0.5rem;
+  background: rgba(13, 148, 136, 0.04);
+}
+
+.ai-prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.1em 0;
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+  border: 1px solid var(--hairline-border);
+  border-radius: 0.55rem;
+  overflow: hidden;
+}
+
+.ai-prose th, .ai-prose td {
+  border-bottom: 1px solid var(--hairline-border);
+  border-right: 1px solid var(--hairline-border);
+  padding: 0.6rem 0.85rem;
+  text-align: left;
+}
+
+.ai-prose th:last-child, .ai-prose td:last-child {
+  border-right: 0;
+}
+
+.ai-prose tr:last-child td {
+  border-bottom: 0;
+}
+
+.ai-prose th {
+  font-weight: 600;
+  font-size: 0.8125rem;
+  background: rgba(161, 161, 170, 0.08);
+}
+
+.ai-prose tbody tr:hover td {
+  background: rgba(161, 161, 170, 0.04);
+}
+
+.ai-prose a {
+  color: #0F766E;
+  text-decoration: underline;
+  text-decoration-color: rgba(15, 118, 110, 0.35);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 150ms ease;
+}
+
+.ai-prose a:hover {
+  text-decoration-color: currentColor;
+}
+
+.dark .ai-prose a {
+  color: #2DD4BF;
+  text-decoration-color: rgba(45, 212, 191, 0.38);
+}
+
+.ai-prose hr {
+  border: 0;
+  border-top: 1px solid var(--hairline-border);
+  margin: 1.4em 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
